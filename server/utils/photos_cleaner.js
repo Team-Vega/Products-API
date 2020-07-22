@@ -7,13 +7,13 @@ const csvStringifier = createCsvStringifier({
   header: [
     { id: 'id', title: 'id' },
     { id: 'styleId', title: 'style_id' },
-    { id: 'size', title: 'size' },
-    { id: 'quantity', title: 'quantity' },
+    { id: 'url', title: 'url' },
+    { id: 'thumbnail_url', title: 'thumbnail_url' },
   ],
 });
 
-let readStream = fs.createReadStream('../../../../skus.csv');
-let writeStream = fs.createWriteStream('../../../../clean_skus.csv');
+let readStream = fs.createReadStream('../../../../photos.csv');
+let writeStream = fs.createWriteStream('../../../../clean_photos.csv');
 
 class CSVCleaner extends Transform {
   constructor(options) {

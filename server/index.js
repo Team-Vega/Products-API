@@ -12,7 +12,7 @@ app.get('/', (req, res) =>
   res.json({ info: 'Node.js, Express, and Postgres API' })
 );
 
-app.get('/users', db.getUsers);
+app.get('/users', db.getSkus);
 
 app.listen(port, () =>
   console.log(`Example app listening at http://localhost:${port}`)

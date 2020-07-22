@@ -18,7 +18,7 @@
   "homepage": "https://github.com/Team-Vega/Products-API#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "csv-parse": "^4.11.1",
+    "csv-parser": "^2.3.3",
     "csv-writer": "^1.6.0",
     "express": "^4.17.1",
     "mongodb": "^3.5.9",
