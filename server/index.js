@@ -3,7 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const port = 3030;
-const db = require('./queries');
+const db = require('./models/queries');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
