@@ -18,11 +18,14 @@
   "homepage": "https://github.com/Team-Vega/Products-API#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "csv-parse": "^4.11.1",
+    "csv-writer": "^1.6.0",
     "express": "^4.17.1",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.24",
     "morgan": "^1.10.0",
-    "pg": "^8.3.0"
+    "pg": "^8.3.0",
+    "stream-transform": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

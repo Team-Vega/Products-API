@@ -10,7 +10,8 @@ services:
   db:
     image: postgres
     volumes:
-      - ./testpg-data:/var/lib/postgresql/data
+      - ./database/postgreSQL/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./database/postgreSQL/pgdata:/var/lib/postgresql
     environment:
       POSTGRES_USER: me
       POSTGRES_PASSWORD: password
