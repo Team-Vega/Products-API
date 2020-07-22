@@ -7,7 +7,7 @@ const pool = new Pool({
   port: 5432,
 });
 
-const getUsers = (req, res) => {
+const getSkus = (req, res) => {
   pool.query(`SELECT * FROM skus`, (error, results) => {
     if (error) {
       console.log('error:', error);
@@ -17,5 +17,5 @@ const getUsers = (req, res) => {
 };
 
 module.exports = {
-  getUsers,
+  getSkus,
 };
