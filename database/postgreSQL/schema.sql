@@ -11,7 +11,7 @@ CREATE TABLE PRODUCTS (
 CREATE TABLE RELATED (
   product_id INTEGER NOT NULL PRIMARY KEY,
   related_products JSON
-)
+);
 
 CREATE TABLE STYLES (
   id INTEGER NOT NULL PRIMARY KEY,
@@ -21,12 +21,7 @@ CREATE TABLE STYLES (
   original_price INTEGER,
   default_style INTEGER,
   skus JSON,
-  photos JSON
-)
-
-CREATE TABLE SKUS (
-  id serial PRIMARY KEY,
-  style_id integer NOT NULL,
-  size TEXT,
-  quantity integer
+  photos JSON,
+  CONSTRAINT fk_styles
+    FOREIGN KEY(product_id) REFERENCES PRODUCTS(id)
 );

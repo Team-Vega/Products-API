@@ -7,6 +7,22 @@ const pool = new Pool({
   port: 5432,
 });
 
+module.exports = {
+  getList: (someParams) => {
+    //return some pool.query(SELECT * FROM products)
+  },
+  getInfo: (someParams) => {
+    //return some pool.query(SELECT * FROM products WHERE id)
+  },
+  getRelated: (someParams) => {
+    //return some pool.query(SELECT * FROM products WHERE related etc)
+  },
+  getStyles: (someParams) => {
+    //return some pool.query(SELECT * FROM styles)
+  },
+  getSkus,
+};
+
 const getSkus = (req, res) => {
   pool.query(`SELECT * FROM skus`, (error, results) => {
     if (error) {
@@ -14,8 +30,4 @@ const getSkus = (req, res) => {
     }
     res.status(200).json(results.rows);
   });
-};
-
-module.exports = {
-  getSkus,
 };
