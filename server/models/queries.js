@@ -1,4 +1,4 @@
-const Pool = require('pg').Pool;
+const { Pool } = require('pg');
 const pool = new Pool({
   user: 'me',
   host: 'db',
@@ -8,16 +8,19 @@ const pool = new Pool({
 });
 
 module.exports = {
-  getList: (someParams) => {
-    //return some pool.query(SELECT * FROM products)
+  queryProductList: () => {
+    return pool.query('SELECT * FROM products limit 5');
   },
-  getInfo: (someParams) => {
-    //return some pool.query(SELECT * FROM products WHERE id)
+  queryProductInfo: (params) => {
+    return pool.query(
+      'SELECT * FROM products INNER JOIN features ON (products.product_id && features.product_id = $1)',
+      params
+    );
   },
-  getRelated: (someParams) => {
+  queryRelated: (someParams) => {
     //return some pool.query(SELECT * FROM products WHERE related etc)
   },
-  getStyles: (someParams) => {
+  queryStyles: (someParams) => {
     //return some pool.query(SELECT * FROM styles)
   },
   // getSkus: (req, res) => {
