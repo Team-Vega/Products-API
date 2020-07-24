@@ -3,7 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const port = 3030;
-const Router = require('./routes');
+const Router = require('./routes/routes.js');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());

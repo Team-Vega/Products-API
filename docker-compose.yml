@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   app:
     build: .
@@ -10,11 +10,10 @@ services:
   db:
     image: postgres
     volumes:
-      - ./database/postgreSQL/schema.sql:/docker-entrypoint-initdb.d/schema.sql
-      - ./database/postgreSQL/pgdata:/var/lib/postgresql
+      - './database/postgreSQL/pgdata:/var/lib/postgresql/data'
     environment:
       POSTGRES_USER: me
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: api
+      POSTGRES_PASSWORD: 'password'
+      POSTGRES_DB: api2
     ports:
-      - 5432:5432
+      - '5432:5432'

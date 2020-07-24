@@ -2,7 +2,7 @@ const Pool = require('pg').Pool;
 const pool = new Pool({
   user: 'me',
   host: 'db',
-  database: 'api',
+  database: 'api2',
   password: 'password',
   port: 5432,
 });
@@ -20,14 +20,12 @@ module.exports = {
   getStyles: (someParams) => {
     //return some pool.query(SELECT * FROM styles)
   },
-  getSkus,
-};
-
-const getSkus = (req, res) => {
-  pool.query(`SELECT * FROM skus`, (error, results) => {
-    if (error) {
-      console.log('error:', error);
-    }
-    res.status(200).json(results.rows);
-  });
+  // getSkus: (req, res) => {
+  //   pool.query(`SELECT * FROM skus`, (error, results) => {
+  //     if (error) {
+  //       console.log('error:', error);
+  //     }
+  //     res.status(200).json(results.rows);
+  //   });
+  // },
 };
