@@ -1,20 +1,20 @@
 version: '3'
 services:
   app:
-    build: .
+    build: ./server
     ports:
       - 3030:3030
     volumes:
       - ./:/app
 
   db:
-    image: postgres
+    image: postgres:12-alpine
     volumes:
-      - ./database/postgreSQL/schema.sql:/docker-entrypoint-initdb.d/schema.sql
-      - ./database/postgreSQL/pgdata:/var/lib/postgresql
+      - './database/postgreSQL/pgdata:/var/lib/postgresql/data'
     environment:
-      POSTGRES_USER: me
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: api
+      - POSTGRES_USER=me
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=api2
     ports:
-      - 5432:5432
+      - '5432:5432'
+    restart: 'on-failure'

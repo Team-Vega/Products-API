@@ -3,17 +3,13 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const port = 3030;
-const db = require('./models/queries');
+const Router = require('./routes/routes.js');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) =>
-  res.json({ info: 'Node.js, Express, and Postgres API' })
-);
-
-app.get('/users', db.getSkus);
+app.use('/products', Router);
 
 app.listen(port, () =>
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${port}/products`)
 );
