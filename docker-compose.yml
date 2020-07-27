@@ -12,8 +12,9 @@ services:
     volumes:
       - './database/postgreSQL/pgdata:/var/lib/postgresql/data'
     environment:
-      POSTGRES_USER: me
-      POSTGRES_PASSWORD: 'password'
-      POSTGRES_DB: api2
+      - POSTGRES_USER=me
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=api2
     ports:
       - '5432:5432'
+    restart: 'on-failure'
