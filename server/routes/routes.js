@@ -10,5 +10,3 @@ Router.get('/:product_id/styles', controllers.getProductStyles);
 Router.get('/:product_id/related', controllers.getProductRelated);
 
 module.exports = Router;
-
-// - ./database/postgreSQL/schema.sql:/docker-entrypoint-initdb.d/schema.sql

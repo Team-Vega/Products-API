@@ -29,7 +29,7 @@ module.exports = {
     let params = [req.params.product_id];
     db.queryStyles(params)
       .then((results) => {
-        res.json(results.rows);
+        res.json(results.rows[0].row_to_json);
       })
       .catch((err) => {
         console.log(

@@ -54,16 +54,16 @@ module.exports = {
                 FROM (
                   SELECT thumbnail_url, url 
                   FROM photos
-                  WHERE photos.style_id = styles.product_id
+                  WHERE photos.style_id = styles.style_id
                 ) photo_cols
               ) AS photos,
               (
-              SELECT json_object_agg(size, quantity)
-              FROM skus
-              WHERE skus.style_id = styles.product_id
+                SELECT jsonb_object_agg(size, quantity)
+                FROM skus
+                WHERE skus.style_id = styles.product_id
               ) AS skus
             FROM styles
-              WHERE styles.product_id = products.product_id
+            WHERE styles.product_id = products.product_id
           ) results_col
         ) AS results
         FROM products
