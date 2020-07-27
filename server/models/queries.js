@@ -43,11 +43,11 @@ module.exports = {
   queryStyles: (productId) => {
     return pool.connect().then((client) => {
       let query = `SELECT row_to_json(t)
-      from (
+      FROM (
         SELECT products.product_id,
           ( 
-          select array_to_json(array_agg(results_col))
-            from (
+          SELECT array_to_json(array_agg(results_col))
+            FROM (
               SELECT styles.style_id, styles.name, styles.original_price, styles.sale_price, styles.default,
               (
                 SELECT array_to_json(array_agg(row_to_json(photo_cols)))
