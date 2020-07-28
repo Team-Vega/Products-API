@@ -1,11 +1,11 @@
 version: '3'
 services:
-  app:
-    build: ./server
-    ports:
-      - 3030:3030
-    volumes:
-      - ./:/app
+  # app:
+  #   build: ./server
+  #   ports:
+  #     - 3030:3030
+  #   volumes:
+  #     - ./:/app
 
   db:
     image: postgres:12-alpine
