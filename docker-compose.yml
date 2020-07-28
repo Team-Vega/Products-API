@@ -1,16 +1,15 @@
 version: '3'
 services:
-  # app:
-  #   build: ./server
-  #   ports:
-  #     - 3030:3030
-  #   volumes:
-  #     - ./:/app
-
-  db:
-    image: postgres:12-alpine
-    volumes:
-      - './database/postgreSQL/pgdata:/var/lib/postgresql/data'
+  app:
+    build: ./server
     ports:
-      - '5432:5432'
-    restart: 'on-failure'
+      - 80:3030
+    volumes:
+      - ./:/app
+  # db:
+  #   image: postgres:12-alpine
+  #   volumes:
+  #     - './database/postgreSQL/pgdata:/var/lib/postgresql/data'
+  #   ports:
+  #     - '5432:5432'
+  #   restart: 'on-failure'
