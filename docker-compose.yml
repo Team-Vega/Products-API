@@ -13,4 +13,9 @@ services:
       - './database/postgreSQL/pgdata:/var/lib/postgresql/data'
     ports:
       - '5432:5432'
+    environment:
+      - POSTGRES_USER: 'me'
+      - POSTGRES_PASSWORD: 'password'
+      - POSTGRES_DB: 'api2'
+
     restart: 'on-failure'
