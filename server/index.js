@@ -9,6 +9,12 @@ const port = 3030;
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
+app.get('/loaderio-a39c596e737aac30cea275cb33dea677', function (req, res) {
+  res.sendFile(
+    path.join(__dirname, 'loaderio-a39c596e737aac30cea275cb33dea677.txt')
+  );
+});
+
 app.use('/products', Router);
 
 app.listen(port, () =>
