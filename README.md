@@ -10,6 +10,10 @@ The goal of this project was to work with a legacy front-end web portal, built b
 - Docker
 
 # Routes built
-```
-GET /products/list
-```
+
+|  Method  |          Endpoint             |    Purpose                                                       |  Response Code  |
+|  :----:  |           :----              |         :----                                                   | :----:          |
+|   GET    | /products/list                | Returns a list of products capped at 5 per page, can be edited.  |       200          |
+|   GET    | /products/:product_id         | Returns details about a specific product based on ID.            |     200         | 
+|   GET    | /products/:product_id/styles  | Returns set styles for a specific  product based on the ID.      |      200           |
+|   GET    | /products/:product_id/related | Returns all related products for a specific product by ID.       |      200           |
